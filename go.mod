@@ -31,7 +31,7 @@ require (
 	golang.org/x/tools v0.1.12
 	google.golang.org/api v0.94.0
 	google.golang.org/genproto v0.0.0-20220829175752-36a9c930ecbf
-	google.golang.org/grpc v1.49.0
+	google.golang.org/grpc v1.50.1
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.2.0
 	google.golang.org/protobuf v1.28.1
 	k8s.io/klog/v2 v2.80.0
