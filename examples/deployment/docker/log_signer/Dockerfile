@@ -1,4 +1,4 @@
-FROM golang:1.24.0-bookworm@sha256:b970e6d47c09fdd34179acef5c4fecaf6410f0b597a759733b3cbea04b4e604a as build
+FROM golang:1.24.2-bookworm@sha256:00eccd446e023d3cd9566c25a6e6a02b90db3e1e0bbe26a48fc29cd96e800901 as build
 
 WORKDIR /trillian
 
@@ -18,7 +18,7 @@ RUN go install ./cmd/trillian_log_signer
 RUN go run github.com/google/go-licenses/v2 save ./cmd/trillian_log_signer --save_path /THIRD_PARTY_NOTICES
 
 # Make a minimal image.
-FROM gcr.io/distroless/base-debian12@sha256:74ddbf52d93fafbdd21b399271b0b4aac1babf8fa98cab59e5692e01169a1348
+FROM gcr.io/distroless/base-debian12@sha256:27769871031f67460f1545a52dfacead6d18a9f197db77110cfc649ca2a91f44
 
 COPY --from=build /go/bin/trillian_log_signer /
 COPY --from=build /THIRD_PARTY_NOTICES /THIRD_PARTY_NOTICES
